@@ -1,0 +1,40 @@
+:root{--bg:#f7f5f0;--card:#fff;--ink:#1e2a22;--muted:#5d6b62;--green:#2f6b45;--green-d:#24543a;--coffee:#7a4b2a;--line:#e3ded3;--err:#b23a3a;--ok:#2e7d5b}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.top{background:var(--green);color:#fff;position:sticky;top:0;z-index:5}
+.top-in{display:flex;justify-content:space-between;align-items:center;height:60px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:22px;letter-spacing:-.5px}.brand span{color:#f2c98f}
+.cart-btn{background:#fff;color:var(--green);border:0;border-radius:999px;padding:8px 14px;font-weight:700;cursor:pointer}
+.cart-btn span{background:var(--coffee);color:#fff;border-radius:999px;padding:1px 8px;margin-left:6px}
+.hero{padding:28px 0 8px}.hero h1{margin:0 0 6px;font-size:clamp(24px,4vw,34px)}.hero p{margin:0;color:var(--muted)}
+.layout{display:grid;grid-template-columns:1fr 360px;gap:24px;padding:20px 0 40px;align-items:start}
+@media (max-width:860px){.layout{grid-template-columns:1fr}}
+.cat-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
+.cat-head h2{margin:0}.filter{font-size:14px;color:var(--muted)}
+select,input{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;width:100%}
+.filter select{width:auto;margin-left:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-top:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:4px}
+.card h3{font-size:15px;margin:6px 0 0}.card p{margin:0;font-size:13px}.price{font-weight:800;font-size:17px!important;color:var(--green-d)}
+.tile{height:84px;border-radius:8px;display:grid;place-items:center;font-weight:800;font-size:26px;color:#fff;background:var(--green)}
+.tile[data-cat="Granos"]{background:#8a6a3b}.tile[data-cat="Despensa"]{background:#c08a2e}.tile[data-cat="Bebidas"]{background:var(--coffee)}.tile[data-cat="Lácteos"]{background:#4f7fa3}.tile[data-cat="Aseo"]{background:#4c8b74}
+button{font:inherit;cursor:pointer}
+.card button,form button[type=submit],.row button{background:var(--green);color:#fff;border:0;border-radius:8px;padding:8px 12px;font-weight:700;margin-top:auto}
+.card button:hover,form button[type=submit]:hover{background:var(--green-d)}
+button:disabled{opacity:.6;cursor:wait}
+.cart{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;position:sticky;top:76px}
+.cart h2{margin:0 0 8px}.lines{list-style:none;margin:0;padding:0}
+.lines li{display:grid;grid-template-columns:1fr auto 28px 28px auto;gap:6px;align-items:center;font-size:14px;padding:6px 0;border-bottom:1px solid var(--line)}
+.mini{width:28px;height:28px;border:1px solid var(--line);background:#fff;border-radius:6px}
+.lt{font-weight:700;min-width:70px;text-align:right}
+.totals{margin:10px 0}.totals div{display:flex;justify-content:space-between}.totals dt,.totals dd{margin:2px 0}.grand{font-weight:800;font-size:18px}
+form{display:grid;gap:8px}form h3{margin:8px 0 0}label{display:grid;gap:4px;font-size:14px}
+.check{grid-template-columns:20px 1fr;align-items:start}.check input{width:auto;margin-top:4px}
+.muted{color:var(--muted)}.msg{min-height:1.2em;font-weight:600}.msg.err{color:var(--err)}.msg.ok{color:var(--ok)}
+.foot{border-top:1px solid var(--line);padding:16px 0;color:var(--muted);font-size:14px}
+a{color:var(--green-d)}
+.admin{padding:24px 16px}.row{display:flex;gap:10px;align-items:end;max-width:520px}
+.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;background:#fff;margin-top:12px;font-size:14px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line)}th{background:#eef2ec}
+.prose{max-width:720px;padding:24px 16px 48px}

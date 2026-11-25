@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>MercaPyme · Panel de pedidos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top"><div class="wrap top-in"><a class="brand" href="/">Merca<span>Pyme</span></a><span class="muted">Panel interno</span></div></header>
+  <main class="wrap admin">
+    <h1>Pedidos recibidos</h1>
+    <form id="login" class="row">
+      <label>Token de administración<input id="token" type="password" autocomplete="off" required minlength="16"></label>
+      <button type="submit">Ver pedidos</button>
+    </form>
+    <p id="amsg" class="msg" role="status" data-testid="admin-msg"></p>
+    <div class="table-wrap"><table id="tbl" hidden>
+      <thead><tr><th>Fecha</th><th>Cliente</th><th>Contacto (enmascarado)</th><th>Ciudad</th><th>Productos</th><th>Total</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+  </main>
+  <script src="/admin.js" type="module"></script>
+</body>
+</html>

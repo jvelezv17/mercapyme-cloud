@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MercaPyme · Pedidos a domicilio</title>
+  <meta name="description" content="Catálogo y pedidos a domicilio de MercaPyme en el Eje Cafetero.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="/">Merca<span>Pyme</span></a>
+      <button class="cart-btn" id="cartBtn" type="button" aria-controls="cart">Carrito <span id="cartCount" data-testid="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Mercado a domicilio en el Eje Cafetero</h1>
+      <p>Pide tus productos de despensa y te los llevamos el mismo día. Envío gratis desde <strong id="freeFrom">$80.000</strong>.</p>
+    </section>
+
+    <div class="layout">
+      <section aria-labelledby="catTitle">
+        <div class="cat-head">
+          <h2 id="catTitle">Catálogo</h2>
+          <label class="filter">Categoría
+            <select id="category"><option value="">Todas</option></select>
+          </label>
+        </div>
+        <p id="status" class="muted" role="status">Cargando catálogo…</p>
+        <div id="grid" class="grid" data-testid="catalog"></div>
+      </section>
+
+      <aside id="cart" class="cart" aria-labelledby="cartTitle">
+        <h2 id="cartTitle">Tu pedido</h2>
+        <ul id="cartLines" class="lines"></ul>
+        <p id="cartEmpty" class="muted">Aún no has agregado productos.</p>
+        <dl class="totals">
+          <div><dt>Subtotal</dt><dd id="subtotal">$0</dd></div>
+          <div><dt>Domicilio</dt><dd id="shipping">$0</dd></div>
+          <div class="grand"><dt>Total</dt><dd id="total" data-testid="total">$0</dd></div>
+        </dl>
+
+        <form id="checkout" novalidate>
+          <h3>Datos de entrega</h3>
+          <label>Nombre completo<input name="name" autocomplete="name" required maxlength="80"></label>
+          <label>Correo<input name="email" type="email" autocomplete="email" required maxlength="254"></label>
+          <label>Teléfono<input name="phone" type="tel" autocomplete="tel" required maxlength="15"></label>
+          <label>Ciudad
+            <select name="city" required>
+              <option value="">Selecciona…</option>
+              <option>Armenia</option><option>Pereira</option><option>Manizales</option><option>Calarcá</option><option>Montenegro</option>
+            </select>
+          </label>
+          <label>Dirección<input name="address" autocomplete="street-address" required maxlength="120"></label>
+          <label class="check"><input type="checkbox" name="consent" required>
+            <span>Autorizo el tratamiento de mis datos para gestionar este pedido, según la <a href="/privacidad.html" target="_blank" rel="noopener">política de tratamiento de datos</a> (Ley 1581 de 2012).</span>
+          </label>
+          <button type="submit" id="submitBtn">Confirmar pedido</button>
+          <p id="formMsg" class="msg" role="alert" data-testid="form-msg"></p>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="foot"><div class="wrap">MercaPyme · Proyecto académico de computación en la nube · <a href="/privacidad.html">Privacidad</a></div></footer>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

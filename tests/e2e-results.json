@@ -1,0 +1,60 @@
+{
+  "base": "http://127.0.0.1:40631",
+  "at": "2026-11-25T03:11:26.509Z",
+  "results": [
+    {
+      "id": "E01",
+      "name": "El catálogo carga 12 productos",
+      "ok": true,
+      "ms": 203
+    },
+    {
+      "id": "E02",
+      "name": "El filtro por categoría muestra solo Bebidas",
+      "ok": true,
+      "ms": 20
+    },
+    {
+      "id": "E03",
+      "name": "Agregar productos actualiza carrito y total",
+      "ok": true,
+      "ms": 125
+    },
+    {
+      "id": "E04",
+      "name": "Sin consentimiento el pedido se rechaza",
+      "ok": true,
+      "ms": 124
+    },
+    {
+      "id": "E05",
+      "name": "Con consentimiento el pedido se confirma",
+      "ok": true,
+      "ms": 190
+    },
+    {
+      "id": "E06",
+      "name": "El panel rechaza un token inválido",
+      "ok": true,
+      "ms": 113
+    },
+    {
+      "id": "E07",
+      "name": "El panel muestra pedidos con datos enmascarados",
+      "ok": true,
+      "ms": 164
+    },
+    {
+      "id": "E08",
+      "name": "La página no genera errores de consola (CSP sin violaciones)",
+      "ok": true,
+      "ms": 1
+    },
+    {
+      "id": "E09",
+      "name": "La interfaz funciona en celular",
+      "ok": true,
+      "ms": 199
+    }
+  ]
+}

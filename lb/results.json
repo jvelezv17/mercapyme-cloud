@@ -1,0 +1,546 @@
+{
+  "generatedAt": "2026-11-25T03:06:06.049Z",
+  "nodes": [
+    {
+      "name": "nodo-A",
+      "port": 9101,
+      "ms": 10,
+      "cap": 4
+    },
+    {
+      "name": "nodo-B",
+      "port": 9102,
+      "ms": 25,
+      "cap": 4
+    },
+    {
+      "name": "nodo-C",
+      "port": 9103,
+      "ms": 60,
+      "cap": 4
+    }
+  ],
+  "phases": [
+    {
+      "name": "Carga baja",
+      "connections": 20,
+      "duration": 8
+    },
+    {
+      "name": "Pico de demanda",
+      "connections": 120,
+      "duration": 8
+    },
+    {
+      "name": "Pico con nodo A degradado",
+      "connections": 120,
+      "duration": 8,
+      "degrade": {
+        "node": "nodo-A",
+        "ms": 90
+      }
+    }
+  ],
+  "runs": [
+    {
+      "strategy": "roundRobin",
+      "rep": 1,
+      "phases": [
+        {
+          "phase": "Carga baja",
+          "connections": 20,
+          "rps": 204,
+          "total": 1633,
+          "p50": 25,
+          "p97_5": 278,
+          "p99": 282,
+          "avg": 95.8,
+          "errors": 0,
+          "share": {
+            "nodo-A": 551,
+            "nodo-B": 550,
+            "nodo-C": 532
+          }
+        },
+        {
+          "phase": "Pico de demanda",
+          "connections": 120,
+          "rps": 224,
+          "total": 1789,
+          "p50": 26,
+          "p97_5": 1767,
+          "p99": 1774,
+          "avg": 478.57,
+          "errors": 0,
+          "share": {
+            "nodo-A": 636,
+            "nodo-B": 636,
+            "nodo-C": 537
+          }
+        },
+        {
+          "phase": "Pico con nodo A degradado",
+          "connections": 120,
+          "rps": 153,
+          "total": 1225,
+          "p50": 717,
+          "p97_5": 2264,
+          "p99": 2291,
+          "avg": 718.31,
+          "errors": 0,
+          "share": {
+            "nodo-A": 358,
+            "nodo-B": 448,
+            "nodo-C": 539
+          }
+        }
+      ]
+    },
+    {
+      "strategy": "leastConnections",
+      "rep": 1,
+      "phases": [
+        {
+          "phase": "Carga baja",
+          "connections": 20,
+          "rps": 641,
+          "total": 5125,
+          "p50": 18,
+          "p97_5": 99,
+          "p99": 108,
+          "avg": 30.64,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3296,
+            "nodo-B": 1295,
+            "nodo-C": 534
+          }
+        },
+        {
+          "phase": "Pico de demanda",
+          "connections": 120,
+          "rps": 641,
+          "total": 5128,
+          "p50": 98,
+          "p97_5": 605,
+          "p99": 613,
+          "avg": 183.12,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3317,
+            "nodo-B": 1295,
+            "nodo-C": 536
+          }
+        },
+        {
+          "phase": "Pico con nodo A degradado",
+          "connections": 120,
+          "rps": 259,
+          "total": 2075,
+          "p50": 252,
+          "p97_5": 946,
+          "p99": 1302,
+          "avg": 445.43,
+          "errors": 0,
+          "share": {
+            "nodo-A": 360,
+            "nodo-B": 1298,
+            "nodo-C": 538
+          }
+        }
+      ]
+    },
+    {
+      "strategy": "predictive",
+      "rep": 1,
+      "phases": [
+        {
+          "phase": "Carga baja",
+          "connections": 20,
+          "rps": 575,
+          "total": 4601,
+          "p50": 35,
+          "p97_5": 43,
+          "p99": 45,
+          "avg": 34.21,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3298,
+            "nodo-B": 1292,
+            "nodo-C": 11
+          }
+        },
+        {
+          "phase": "Pico de demanda",
+          "connections": 120,
+          "rps": 642,
+          "total": 5135,
+          "p50": 186,
+          "p97_5": 200,
+          "p99": 210,
+          "avg": 184.32,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3324,
+            "nodo-B": 1298,
+            "nodo-C": 534
+          }
+        },
+        {
+          "phase": "Pico con nodo A degradado",
+          "connections": 120,
+          "rps": 259,
+          "total": 2073,
+          "p50": 434,
+          "p97_5": 2155,
+          "p99": 2844,
+          "avg": 449.65,
+          "errors": 0,
+          "share": {
+            "nodo-A": 360,
+            "nodo-B": 1295,
+            "nodo-C": 537
+          }
+        }
+      ]
+    },
+    {
+      "strategy": "roundRobin",
+      "rep": 2,
+      "phases": [
+        {
+          "phase": "Carga baja",
+          "connections": 20,
+          "rps": 206,
+          "total": 1646,
+          "p50": 25,
+          "p97_5": 278,
+          "p99": 284,
+          "avg": 95.13,
+          "errors": 0,
+          "share": {
+            "nodo-A": 555,
+            "nodo-B": 554,
+            "nodo-C": 537
+          }
+        },
+        {
+          "phase": "Pico de demanda",
+          "connections": 120,
+          "rps": 224,
+          "total": 1792,
+          "p50": 26,
+          "p97_5": 1766,
+          "p99": 1771,
+          "avg": 479.07,
+          "errors": 0,
+          "share": {
+            "nodo-A": 637,
+            "nodo-B": 637,
+            "nodo-C": 538
+          }
+        },
+        {
+          "phase": "Pico con nodo A degradado",
+          "connections": 120,
+          "rps": 152,
+          "total": 1216,
+          "p50": 711,
+          "p97_5": 2274,
+          "p99": 2292,
+          "avg": 720.96,
+          "errors": 0,
+          "share": {
+            "nodo-A": 354,
+            "nodo-B": 445,
+            "nodo-C": 537
+          }
+        }
+      ]
+    },
+    {
+      "strategy": "leastConnections",
+      "rep": 2,
+      "phases": [
+        {
+          "phase": "Carga baja",
+          "connections": 20,
+          "rps": 640,
+          "total": 5120,
+          "p50": 18,
+          "p97_5": 100,
+          "p99": 108,
+          "avg": 30.67,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3293,
+            "nodo-B": 1293,
+            "nodo-C": 535
+          }
+        },
+        {
+          "phase": "Pico de demanda",
+          "connections": 120,
+          "rps": 640,
+          "total": 5120,
+          "p50": 98,
+          "p97_5": 607,
+          "p99": 616,
+          "avg": 183.37,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3317,
+            "nodo-B": 1289,
+            "nodo-C": 534
+          }
+        },
+        {
+          "phase": "Pico con nodo A degradado",
+          "connections": 120,
+          "rps": 260,
+          "total": 2080,
+          "p50": 251,
+          "p97_5": 935,
+          "p99": 1343,
+          "avg": 444.16,
+          "errors": 0,
+          "share": {
+            "nodo-A": 360,
+            "nodo-B": 1302,
+            "nodo-C": 537
+          }
+        }
+      ]
+    },
+    {
+      "strategy": "predictive",
+      "rep": 2,
+      "phases": [
+        {
+          "phase": "Carga baja",
+          "connections": 20,
+          "rps": 574,
+          "total": 4588,
+          "p50": 35,
+          "p97_5": 43,
+          "p99": 46,
+          "avg": 34.29,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3297,
+            "nodo-B": 1284,
+            "nodo-C": 7
+          }
+        },
+        {
+          "phase": "Pico de demanda",
+          "connections": 120,
+          "rps": 641,
+          "total": 5124,
+          "p50": 186,
+          "p97_5": 197,
+          "p99": 209,
+          "avg": 184.7,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3314,
+            "nodo-B": 1303,
+            "nodo-C": 528
+          }
+        },
+        {
+          "phase": "Pico con nodo A degradado",
+          "connections": 120,
+          "rps": 259,
+          "total": 2069,
+          "p50": 435,
+          "p97_5": 1866,
+          "p99": 2550,
+          "avg": 451.09,
+          "errors": 0,
+          "share": {
+            "nodo-A": 360,
+            "nodo-B": 1295,
+            "nodo-C": 533
+          }
+        }
+      ]
+    },
+    {
+      "strategy": "roundRobin",
+      "rep": 3,
+      "phases": [
+        {
+          "phase": "Carga baja",
+          "connections": 20,
+          "rps": 204,
+          "total": 1633,
+          "p50": 25,
+          "p97_5": 280,
+          "p99": 283,
+          "avg": 96.03,
+          "errors": 0,
+          "share": {
+            "nodo-A": 551,
+            "nodo-B": 549,
+            "nodo-C": 533
+          }
+        },
+        {
+          "phase": "Pico de demanda",
+          "connections": 120,
+          "rps": 224,
+          "total": 1793,
+          "p50": 26,
+          "p97_5": 1766,
+          "p99": 1773,
+          "avg": 476.98,
+          "errors": 0,
+          "share": {
+            "nodo-A": 637,
+            "nodo-B": 638,
+            "nodo-C": 538
+          }
+        },
+        {
+          "phase": "Pico con nodo A degradado",
+          "connections": 120,
+          "rps": 152,
+          "total": 1217,
+          "p50": 712,
+          "p97_5": 2314,
+          "p99": 2343,
+          "avg": 722.57,
+          "errors": 0,
+          "share": {
+            "nodo-A": 357,
+            "nodo-B": 446,
+            "nodo-C": 534
+          }
+        }
+      ]
+    },
+    {
+      "strategy": "leastConnections",
+      "rep": 3,
+      "phases": [
+        {
+          "phase": "Carga baja",
+          "connections": 20,
+          "rps": 641,
+          "total": 5127,
+          "p50": 18,
+          "p97_5": 99,
+          "p99": 109,
+          "avg": 30.64,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3303,
+            "nodo-B": 1289,
+            "nodo-C": 535
+          }
+        },
+        {
+          "phase": "Pico de demanda",
+          "connections": 120,
+          "rps": 640,
+          "total": 5123,
+          "p50": 98,
+          "p97_5": 610,
+          "p99": 618,
+          "avg": 183.21,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3315,
+            "nodo-B": 1296,
+            "nodo-C": 532
+          }
+        },
+        {
+          "phase": "Pico con nodo A degradado",
+          "connections": 120,
+          "rps": 259,
+          "total": 2075,
+          "p50": 251,
+          "p97_5": 946,
+          "p99": 1257,
+          "avg": 445.8,
+          "errors": 0,
+          "share": {
+            "nodo-A": 363,
+            "nodo-B": 1297,
+            "nodo-C": 535
+          }
+        }
+      ]
+    },
+    {
+      "strategy": "predictive",
+      "rep": 3,
+      "phases": [
+        {
+          "phase": "Carga baja",
+          "connections": 20,
+          "rps": 574,
+          "total": 4594,
+          "p50": 35,
+          "p97_5": 43,
+          "p99": 46,
+          "avg": 34.25,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3301,
+            "nodo-B": 1286,
+            "nodo-C": 7
+          }
+        },
+        {
+          "phase": "Pico de demanda",
+          "connections": 120,
+          "rps": 640,
+          "total": 5121,
+          "p50": 187,
+          "p97_5": 198,
+          "p99": 213,
+          "avg": 184.79,
+          "errors": 0,
+          "share": {
+            "nodo-A": 3307,
+            "nodo-B": 1300,
+            "nodo-C": 534
+          }
+        },
+        {
+          "phase": "Pico con nodo A degradado",
+          "connections": 120,
+          "rps": 260,
+          "total": 2081,
+          "p50": 431,
+          "p97_5": 2095,
+          "p99": 2774,
+          "avg": 448.64,
+          "errors": 0,
+          "share": {
+            "nodo-A": 364,
+            "nodo-B": 1301,
+            "nodo-C": 536
+          }
+        }
+      ]
+    }
+  ],
+  "failover": {
+    "connections": 60,
+    "duration": 10,
+    "killedAtSec": 4,
+    "total": 5459,
+    "errors": 15,
+    "errorRatePct": 0.275,
+    "p99": 132,
+    "share": {
+      "nodo-A": 4132,
+      "nodo-B": 642,
+      "nodo-C": 671
+    }
+  }
+}
